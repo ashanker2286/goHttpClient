@@ -1,0 +1,34 @@
+{
+    "Ports" : [
+        {
+            "IntfRef" : "fpPort1",
+            "AdminState" : "UP",
+	    "Speed" : 1000,
+	    "Autoneg": "OFF"
+        }
+    ],
+    "Vlans" : [
+        {
+            "VlanId" : 2,
+	    "IntfList": "",
+            "UntagIntfList" : "fpPort1"
+        }
+    ],
+    "IPv4Intf" : [
+        {
+            "IpAddr" : "172.16.10.1/24",
+            "IntfRef" : "vlan2"
+        }
+    ],
+    "Routes" : [
+        {
+            "DestinationNw" : "60.1.1.0",
+            "NetworkMask" : "255.255.255.0",
+	    "Cost": 0,
+            "NextHop" : [
+		{"NextHopIp": "172.16.10.2"}
+	    ],
+            "Protocol": "STATIC"
+        }
+    ]
+}
